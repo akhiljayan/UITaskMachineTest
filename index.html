@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="">
+    <meta name="keywords" content="angularjs,SPA,Single Page Application,bootstrap,bootstrap ui,tutorial,JS framework,foursquare,foursquare api,api,web api" />
+    <meta name="description" content="SPA built using angularjs, this tutorial integrates with foursquare APIs" />
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Rollce Royce Test UI</title>
+    <link href="Resources/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="Resources/CSS/toaster.css" rel="stylesheet" />
+    <link href="Resources/CSS/site.css" rel="stylesheet" />
+    <link href="Resources/CSS/screen_new.css" rel="stylesheet" />
+    <link href="Resources/CSS/AdminLTE.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Resources/CSS/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Resources/CSS/jquery-ui.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="Resources/CSS/c3.css" rel="stylesheet" />
+    <style type="text/css">
+        .bs-callout-danger {
+            border-left-color: #ce4844 !important;
+        }
+
+        .bs-callout {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" ng-app="rollce-royce-test" style="margin:0px; margin-right:5px; width:100%">
+        <div class="row">
+            <div id="page">
+                <div data-ng-view=""></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3rd party libraries -->
+    <script src="Resources/Script/jquery.min.js"></script>
+    <script src="Resources/Script/angular.min.js"></script>
+    <script src="Resources/Script/angular-route.min.js"></script>
+    <script src="Resources/Script/angular-resource.min.js"></script>
+    <script src="Resources/Script/angular-animate.min.js"></script>
+    <script src="Resources/Script/angular-ui.min.js"></script>
+    <script src="Resources/Script/ui-bootstrap.min.js"></script>
+    <script src="Resources/Script/ui-bootstrap-tpls.min.js"></script>
+    <script src="Resources/Script/angular-filter.js"></script>
+    <script src="Resources/Script/toaster.js"></script>
+    <script src="Resources/Script/jquery-ui.js"></script>
+    <script src="Resources/Script/bootstrap.min.js"></script>
+
+    <script src="Resources/Script/d3-3.5.6.min.js"></script>
+    <script src="Resources/Script/c3.min.js"></script>
+    <script src="Resources/Script/c3-angular.min.js"></script>
+    <!-- Load app main script -->
+    <script src="app.js"></script>
+    <script src="Service/StaticUiService.js"></script>
+    <!-- Load controllers -->
+    <script src="Controllers/StaticUiController.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+    </script>
+</body>
+</html>

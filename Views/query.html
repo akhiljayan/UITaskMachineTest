@@ -1,0 +1,85 @@
+<style type="text/css">
+  .dropdownbar {
+    height: 25px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+</style>
+<div class="col-md-12 no-padding">
+  <div class="col-md-3 no-padding full-height" style="background-color:#f1f1f1; height:90vh; position:relative;">
+    <div class="col-md-12  no-padding" style="border-bottom: 1px solid #e5e5e5">
+      <div class="col-md-5" style="padding-top:9px;padding-bottom:9px">
+        Type Selection
+      </div>
+      <div class="col-md-7" style="padding-top:9px;padding-bottom:9px; padding-right:2px">
+        <select class="dropdownbar form-control pull-right">
+          <option value="1">Sample 001</option>
+          <option value="2">Sample 002</option>
+          <option value="3">Sample 003</option>
+          <option value="4">Sample 004</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-12 no-padding">
+      <select class="dropdownbar form-control">
+        <option value="">Select to add query parameter</option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+    </div>
+    <div class="col-md-12 no-padding">
+      <table class="table">
+        <tr class="tbl-head" style="background-color:#777777; color:white">
+          <th style="text-align:center">All Inputs</th>
+          <th style="text-align:center">All Outputs</th>
+          <th style="text-align:center"><i class="fa fa-trash-o" aria-hidden="true"></i> Clear</th>
+        </tr>
+        <tbody ng-repeat="dataRepo in tablelist" class="item drag-item">
+          <tr ng-repeat="rout in dataRepo">
+            <td>{{rout.PostalCode}}</td>
+            <td>{{rout.zone.centre.CenterName}}</td>
+            <td>{{rout.zone.ZoneName}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div ng-show="!mealRouts.length" style="text-align:center">
+        <p style="color:#bebebe"><b>No Selected query parameter</b></p>
+      </div>
+    </div>
+    <div class="col-md-12 no-padding" style="position: absolute;bottom:0;float:left">
+      <button class="btn btn-primary form-control" ng-click="showGraph('query_tab')">Query (click to show graph)</button>
+    </div>
+
+  </div>
+  <div class="col-md-9" style="padding:0px 0px 0px 5px">
+    <div style="height:45vh;background-color:#f1f1f1; margin-bottom:2px">
+      <div class="col-md-12 no-padding" style="height:30px; border-bottom:1px solid #d8d8d8"></div>
+      <div class="col-md-12" style="text-align:center; padding-top:20px">
+        <p style="color:#bebebe"><b>No Query Data Available</b></p>
+      </div>
+    </div>
+    <div ng-if="default == true">
+      <div style="height:45vh;background-color:#f1f1f1;margin-top:2px">
+        <div class="col-md-12" ng-show="default" style="text-align:center;padding-top:20px">
+          <p style="color:#bebebe"><b>No Query Data Visualisation Available</b></p>
+        </div>
+      </div>
+    </div>
+    <div ng-if="graph == true">
+      <div class="col-md-12" style="background-color:#f1f1f1;">
+          <a href="" title="Close graph" ng-click="closeChart('query_tab')" style="color:red;float:right"><i class="fa fa-window-close-o" aria-hidden="true"></i></a>
+      </div>
+      <div style="background-color:#f1f1f1;margin-top:2px">
+        <div class="col-md-12 no-padding" ng-show="graph">
+          <c3chart bindto-id="chart1" show-labels="true" style="background-color:#f1f1f1;">
+            <span ng-repeat="dataRepo in dataval">
+              <chart-column column-id="{{dataRepo.name}}" column-name="{{dataRepo.name}}" column-color="{{dataRepo.color}}" column-values="{{dataRepo.data}}" column-type="line" />
+              <chart-points point-radius="5" show-point="true" point-expand-enabled="true" point-expand-radius="10" />
+            </span>
+          </c3chart>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<style type="text/css">
+  a.angdiss {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .a-tab {
+    background-color: #cccccc;
+  }
+
+  .nav-tabs>li>a {
+    border-radius: 0px 0px 0px 0px !important;
+  }
+</style>
+<link href="Resources/CSS/verticaltab.css" rel="stylesheet" />
+<div class="main-div" ng-controller="StaticUiController">
+  <div class="col-md-12" style="padding:0px">
+    <div class="col-md-1 no-padding" style="width:3.1%;height:90vh; border-right:1px solid gray">
+      <ul class="nav nav-tabs tabs-left vertical-text">
+        <li class="vtab" ng-class="{'active': view_tab == 'tab1'}">
+          <a ng-click="changeTab('tab1')" class="a-tab" href="">Level 1-1</a>
+        </li>
+        <li class="vtab" ng-class="{'active': view_tab == 'tab2'}">
+          <a ng-click="changeTab('tab2')" class="a-tab" href="">Level 1-2</a>
+        </li>
+        <li class="vtab" ng-class="{'active': view_tab == 'tab3'}">
+          <a ng-click="changeTab('tab3')" class="a-tab" href="">Level 1-3</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-11 no-padding">
+      <div class="tab-content">
+        <div class="tab-pane" ng-class="{'active': view_tab == 'tab1'}" ng-show="view_tab == 'tab1'" id="level-1-1">
+          <ng-include src="'Views/secondary.html'"></ng-include>
+        </div>
+        <div class="tab-pane" ng-class="{'active': view_tab == 'tab2'}" ng-show="view_tab == 'tab2'" id="level-1-2">
+          <div class="col-md-12" style="text-align:center;padding-top:20px">
+            <p style="color:#bebebe"><b>level-1-2</b></p>
+          </div>
+        </div>
+        <div class="tab-pane" ng-class="{'active': view_tab == 'tab3'}" ng-show="view_tab == 'tab3'" id="level-1-3">
+          <div class="col-md-12" style="text-align:center;padding-top:20px">
+            <p style="color:#bebebe"><b>level-1-2</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Tab panes -->
+
+</div>
+</div>
+
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".a-query").click(function(){
+      $('.full-height').css({ height: $(window).innerHeight() });
+      alert($(window).innerHeight());
+      $(window).resize(function(){
+        $('.full-height').css({ height: $(window).innerHeight() });
+      });
+    });
+  });
+</script>
